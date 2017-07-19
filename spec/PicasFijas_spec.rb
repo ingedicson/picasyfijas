@@ -27,6 +27,7 @@ describe PicasFijas do
 
 	it "Ver historial de 1 jugada" do
 		miPicasFijas=PicasFijas.new 
+		result = miPicasFijas.validarNumero "1234","5678"
 		result = miPicasFijas.historial
 		expect(result).to eq "5678 - 0 picas, 0 fijas"
 	end	

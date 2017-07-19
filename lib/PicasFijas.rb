@@ -1,5 +1,6 @@
 class PicasFijas
 	def initialize
+		@historial=""
 	end
 
 	def validarNumero(numerooculto, numerojugada)
@@ -17,10 +18,11 @@ class PicasFijas
 			end
 
 		end
+		@historial = "#{numerojugada} - #{picas} picas, #{fijas} fijas"
 		return "#{picas} picas #{fijas} fijas"
 	end
 
 	def historial
-		return "5678 - 0 picas, 0 fijas"
+		return @historial
 	end
 end
