@@ -1,5 +1,5 @@
 Given(/^iniciar juego con valor "([^"]*)"$/) do |numerosistema|
-visit '/juego'
+	visit '/'
 	#fill_in("numerooculto", :with => numerosistema) 
 	find('#numerooculto',:visible => false).set numerosistema
 end

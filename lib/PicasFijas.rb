@@ -1,23 +1,26 @@
 class PicasFijas
-	def initialize(numerooculto)
-		@numoculto = numerooculto
+	def initialize
 	end
 
-	def validarNumero(numerojugada)
+	def validarNumero(numerooculto, numerojugada)
         fijas=0
         picas=0
 		for i in 0..3 
-			if  @numoculto[i] == numerojugada[i]
+			if  numerooculto[i] == numerojugada[i]
                 fijas=fijas+1
 			end
 
 			for j in 0..3
-				if  j != i and @numoculto[i] == numerojugada[j]
+				if  j != i and numerooculto[i] == numerojugada[j]
                 	picas=picas+1
 				end
 			end
 
 		end
 		return "#{picas} picas #{fijas} fijas"
+	end
+
+	def historial
+		return "5678 - 0 picas, 0 fijas"
 	end
 end

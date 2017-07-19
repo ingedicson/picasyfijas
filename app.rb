@@ -4,6 +4,7 @@ require './lib/PicasFijas.rb'
 
 get '/' do
 	session["resultado"] = ""
+  	session["game"]=PicasFijas.new	
 	erb(:juego)
 end
 
@@ -15,8 +16,8 @@ end
 post '/juego' do
 	numerooculto = params["numerooculto"]
 	numerojugada = params["numerojugada"]
-
-	miPicasFijas=PicasFijas.new numerooculto
-	session["resultado"] = miPicasFijas.validarNumero numerojugada
+  	
+	session["resultado"] = session["game"].validarNumero numerooculto, numerojugada
+	session["historial"] = session["game"].historial
 	erb(:juego)
 end
