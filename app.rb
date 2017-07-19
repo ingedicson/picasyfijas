@@ -1,5 +1,6 @@
 require 'sinatra'
 require './config'
+require './lib/PicasFijas.rb'
 
 get '/' do
 
@@ -11,5 +12,10 @@ end
 
 
 post '/resultado' do
-	"0 picas 0 fijas"
+	numerooculto = params["numerooculto"]
+	numerojugada = params["numerojugada"]
+
+	miPicasFijas=PicasFijas.new numerooculto
+	session["resultado"] = miPicasFijas.validarNumero numerojugada
+	erb(:resultado)
 end
