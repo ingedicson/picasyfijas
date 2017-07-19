@@ -4,12 +4,14 @@ require './lib/PicasFijas.rb'
 
 get '/' do
 	session["resultado"] = ""
+	session["historial"] = ""
   	session["game"]=PicasFijas.new	
 	erb(:juego)
 end
 
 get '/juego' do
 	session["resultado"] = ""
+	session["historial"] = ""
 	erb(:juego)
 end
 
