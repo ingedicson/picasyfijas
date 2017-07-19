@@ -1,6 +1,7 @@
 Given(/^iniciar juego con valor "([^"]*)"$/) do |numerosistema|
 visit '/juego'
-	fill_in("numerooculto", :with => numerosistema) 
+	#fill_in("numerooculto", :with => numerosistema) 
+	find('#numerooculto',:visible => false).set numerosistema
 end
 
 When(/^ingresar jugada "([^"]*)"$/) do |numerojugador|

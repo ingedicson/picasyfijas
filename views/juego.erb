@@ -4,10 +4,11 @@
 	<title></title>
 </head>
 <body>
-	<form action="/resultado" method="post">
-		<input type="text" name="numerooculto">
+	<form action="/juego" method="post">
+		<input type="hidden" name="numerooculto" id="numerooculto" value="1234">
 		<input type="text" name="numerojugada">
 		<input type="submit" name="Adivinar" value="Adivinar">
 	</form>
+	<h1><%=session["resultado"]%></h1>
 </body>
 </html>

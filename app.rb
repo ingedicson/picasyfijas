@@ -3,7 +3,7 @@ require './config'
 require './lib/PicasFijas.rb'
 
 get '/' do
-
+	erb(:juego)
 end
 
 get '/juego' do
@@ -11,7 +11,7 @@ get '/juego' do
 end
 
 
-post '/resultado' do
+post '/juego' do
 	numerooculto = params["numerooculto"]
 	numerojugada = params["numerojugada"]
 
