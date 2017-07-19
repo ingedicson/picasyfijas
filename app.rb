@@ -3,13 +3,14 @@ require './config'
 require './lib/PicasFijas.rb'
 
 get '/' do
+	session["resultado"] = ""
 	erb(:juego)
 end
 
 get '/juego' do
+	session["resultado"] = ""
 	erb(:juego)
 end
-
 
 post '/juego' do
 	numerooculto = params["numerooculto"]
@@ -17,5 +18,5 @@ post '/juego' do
 
 	miPicasFijas=PicasFijas.new numerooculto
 	session["resultado"] = miPicasFijas.validarNumero numerojugada
-	erb(:resultado)
+	erb(:juego)
 end
